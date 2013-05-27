@@ -675,7 +675,7 @@ ol.style1 li
 
 #content:after
 {
-  content: '';
+  /* content: ''; */
   display: block;
   position: absolute;
   left: 0;

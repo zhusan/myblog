@@ -1,0 +1,30 @@
+// Place all the styles related to the admin/blog controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+
+.title_input{
+  width:100%;
+  font-size:1.7em;
+  line-height:100%;
+  outline:0 none;
+  padding:3px 8px;
+}
+
+#title_div{
+  margin:10px 0;
+}
+
+.show_title{
+  font-weight:bold;
+  margin-bottom:20px;
+  font-size:26px;
+}
+
+.blog_date_div{
+  margin-bottom:30px;
+  color:grey
+}
+
+.blog_date_div span{
+  color:blue
+}

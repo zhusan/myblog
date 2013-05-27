@@ -1,0 +1,7 @@
+<div>
+  <h2 class="show_title"><%= @blog.title %></h2>
+  <div class="blog_date_div">
+    发表于：<span><%= full_date(@blog.created_at) %></span>
+  </div>
+</div>
+<%= raw @blog.content%>

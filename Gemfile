@@ -38,5 +38,7 @@ gem 'therubyracer'
 # To use debugger
 # gem 'debugger'
 
-gem 'omniauth'
-gem 'omniauth-github'
+# gem 'omniauth'
+# gem 'omniauth-github'
+#
+ gem 'rails_kindeditor', '~> 0.3.18'

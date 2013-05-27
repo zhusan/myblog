@@ -1,7 +1,5 @@
 class UserController < ApplicationController
   def login
-    puts request.post?,"111111111111111111111111111111"
-    
     return unless request.post?
     user = User.auth_login(params[:login],params[:password])
     if user
@@ -13,5 +11,4 @@ class UserController < ApplicationController
       redirect_to :action => :login
     end
   end
-
 end

@@ -21,7 +21,7 @@ class User < ActiveRecord::Base
       false
     end
   end
-
+  
   private
   def create_password(p)
     salt = Array.new(10){rand(1024).to_s(36)}.join

@@ -1,0 +1,6 @@
+<div>
+  <div id="title_div">
+    <%= text_field_tag :title, params[:title] || @blog.try(:title), :class => "title_input" %> 
+  </div>
+  <div><%=kindeditor_tag :content1, params[:content1] || @blog.try(:content), :editor_id => "my_editor" %></div>
+</div>

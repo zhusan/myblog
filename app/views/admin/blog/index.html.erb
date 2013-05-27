@@ -1,0 +1,14 @@
+<table>
+  <tr><td>标题</td><td>作者</td><td>日期</td><td>操作</td></tr>
+  <% @blogs.each do |blog| %>
+    <tr>
+      <td><%= link_to blog.title,admin_blog_path(blog)  %></td>
+      <td><%= "zhusan" %></td>
+      <td><%= full_date(blog.created_at) %></td>
+      <td>
+        <%= link_to '编辑', edit_admin_blog_path(blog)  %>
+        <%= link_to '删除', admin_blog_path(blog), :method => "delete"  %>
+      </td>
+    </tr>
+    <% end %>
+  </table>
