@@ -1,7 +1,7 @@
 class User < ActiveRecord::Base
   attr_accessible  :login, :name, :salt,:password
   validate :login, :presence => true
-
+  has_many :blogs
   def password
     @password
   end

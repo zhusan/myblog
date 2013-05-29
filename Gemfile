@@ -23,6 +23,8 @@ end
 gem 'jquery-rails'
 gem 'will_paginate', '~> 3.0'# 分页
 gem 'therubyracer'
+
+gem "rails-i18n"
 # To use ActiveModel has_secure_password
 # gem 'bcrypt-ruby', '~> 3.0.0'
 
@@ -41,4 +43,7 @@ gem 'therubyracer'
 # gem 'omniauth'
 # gem 'omniauth-github'
 #
- gem 'rails_kindeditor', '~> 0.3.18'
+gem 'rails_kindeditor', '~> 0.3.18'
+gem 'mini_magick'
+# gem 'locale'  
+# gem 'locale_rails' 

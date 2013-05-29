@@ -1,3 +1,4 @@
+<%= errors_for @blog %>
 <div>
   <h2>撰写新文章</h2>
   <%= form_tag admin_blog_index_path, :onsubmit => "editor.sync()" do %>

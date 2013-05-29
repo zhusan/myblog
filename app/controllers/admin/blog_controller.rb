@@ -1,20 +1,33 @@
 class Admin::BlogController < Admin::BaseController
 
   def index
-    @blogs = Blog.all
+    @blogs = Blog.paginate(:page => params[:page], :per_page => 15)
   end
 
   def new
   end
 
   def create
-    blog = Blog.new({:title => params[:title], :content => params[:content1.to_s]})
-    blog.save!
-    redirect_to  :action => :index
+    @blog = Blog.new({:user_id => session[:user],:title => params[:title], :content => params[:content1.to_s]})
+    if @blog.valid? && @blog.save!
+      flash[:notice] = "文件新建成功！"
+      redirect_to  admin_blog_index_path
+    end
+    render new_admin_blog_path
   end
 
   def edit
     @blog = Blog.find_by_id(params[:id])
+  end
+
+  def update
+    @blog = Blog.find_by_id(params[:id])
+    @blog.attributes = {:title => params[:title], :content => params[:content1]}
+    if @blog.valid? && @blog.save!
+      redirect_to admin_blog_path(@blog)
+    else
+    render :action => :edit
+    end
   end
 
   def show

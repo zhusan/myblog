@@ -1,0 +1,13 @@
+zh-CN:
+  blog: "文章"
+  # blog_action: "发表"
+  
+#分页
+  will_paginate:
+    previous_label: "上一页"
+    next_label: "下一页"
+  activerecord:
+    attributes:
+      blog:
+        title: "标题"
+        content: "内容"

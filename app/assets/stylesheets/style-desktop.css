@@ -60,7 +60,7 @@ h3, h4, h5, h6
   padding: 3em 0 0 0;
 }
 
-.pager .pages
+.pager .pagination
 {
 }
 
@@ -69,25 +69,52 @@ h3, h4, h5, h6
   margin-right: 0.6em;
 }
 
-.pager .next
+.pager .next_page
 {
   margin-left: 0.2em;
 }
 
-.pager .pages a
+.pager .pagination a
 {
   width: 2.75em;
   height: 2.75em;
   line-height: 2.75em;
 }
 
-.pager .button
+.pager .next_page, .pager .previous_page
 {
   height: 2.75em;
   padding-top: 0;
   padding-bottom: 0;
   line-height: 2.75em;
+  width:5em!important;
+  background-color: #c94663!important;
+  background-image: url('images/bg1.png')!important;
+  border-radius: 0.4em;
+  text-align: center;
+  box-shadow: inset 0px 0px 0px 1px rgba(255,255,255,0.15);
+  color: #fff!important;
+  font-family: 'Open Sans Condensed', sans-serif;
+  font-weight: 700;
+  text-decoration: none;
+  -moz-transition: background-color .25s ease-in-out, color .25s ease-in-out;
+  -webkit-transition: background-color .25s ease-in-out, color .25s ease-in-out;
+  -o-transition: background-color .25s ease-in-out, color .25s ease-in-out;
+  -ms-transition: background-color .25s ease-in-out, color .25s ease-in-out;
+  transition: background-color .25s ease-in-out, color .25s ease-in-out;
+  text-shadow: -1px -1px 0px rgba(0,0,0,0.5);
 }
+
+.pager .next_page:hover, .pager .previous_page:hover
+{
+  background-color: #d95673!important;
+}
+
+.pager .next_page.disabled, .pager .previous_page.disabled
+{
+  display:none;
+}
+
 
 /*********************************************************************************/
 /* Section/Article Types                                                         */
@@ -143,6 +170,11 @@ h3, h4, h5, h6
   color: #fff;
   font-size: 2em;
   letter-spacing: 0.1em;
+}
+
+#logo h1.mobileUI-site-name a
+{
+  text-decoration:none
 }
 
 /*********************************************************************************/

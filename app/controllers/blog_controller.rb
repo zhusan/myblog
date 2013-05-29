@@ -1,0 +1,14 @@
+class BlogController < ApplicationController
+  def index
+    @blogs = Blog.paginate(:page => params[:page], :per_page => 5)
+  end
+
+  def show
+    @blog = Blog.find_by_id(params[:id])
+    unless @blog
+      flash[:notice] = "没有该文章!"
+      redirect_to :action => :index
+    end
+  end
+
+end

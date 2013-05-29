@@ -1,3 +1,23 @@
+/* ========== errorExplanation ========== */
+.errorExplanation{
+  margin-bottom:20px;
+  background-color:#ffffff;
+  border:1px solid #ff5353;
+  padding-bottom:5px;
+}
+.errorExplanation h2{
+  color:#ffffff;
+  background-color:#ff5353;
+  padding:3px 5px;
+  font-size:14px;
+}
+.errorExplanation p{
+  margin-left:5px;
+}
+.errorExplanation ul li{
+  list-style-type:disc;
+  margin-left:20px;
+}
 @import "admin/blog";
 @import "5grid/core";
 @import "5grid/core-desktop";
@@ -5,5 +25,5 @@
 @import "5grid/core-noscript";
 @import "style";
 @import "style-desktop";
-@import "style-1000px.css";
+@import "style-1200px.css";
 @import "kindeditor/plugins/code/prettify"

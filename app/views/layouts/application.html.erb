@@ -4,6 +4,7 @@
     <title>Myblog</title>
     <%= stylesheet_link_tag    "application", :media => "all" %>
     <%= javascript_include_tag "application" %>
+    <%= javascript_include_tag "kindeditor/plugins/code/prettify" %>
     <%= csrf_meta_tags %>
   </head>
   <body class="left-sidebar is-desktop is-1000px">
@@ -18,5 +19,8 @@
         <%= render partial: "/user/sidebar" %>
       </div>
     </div>
-  </body>
-</html>
+    <script type="text/javascript">
+      prettyPrint();
+      </script>
+    </body>
+  </html>

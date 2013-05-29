@@ -27,6 +27,7 @@ body
 
 .is-post
 {
+  min-height:160px;
 }
 
 .is-post h2
@@ -62,6 +63,7 @@ body
   border-top-left-radius: 0.4em;
   border-bottom-left-radius: 0.4em;
   box-shadow: 0.25em 0 0 0 #fbfbfb, 0 0 0.25em 0em rgba(0,0,0,0.25);
+  min-height: 200px;
 }
 
 .is-post .info:after
@@ -96,7 +98,7 @@ body
 .is-post .info .date .year,
 .is-post .info .date .month span
 {
-  display: none;
+  /* display: none; */
 }
 
 .is-post .info .date .day
@@ -134,14 +136,11 @@ body
 {
   padding: 3em 5em 8em 5em;
 }
-
 body.left-sidebar #content
 {
   margin-left: 21em; /* = sidebar width + 7 */
 }
-
-body.right-sidebar #content
-{
+body.right-sidebar #content{
   margin-right: 14em; /* = sidebar width */
   margin-left: 7em;
 }

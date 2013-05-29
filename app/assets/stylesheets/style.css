@@ -370,14 +370,14 @@ ol.style1 li
 {
 }
 
-.pager .pages
+.pager .pagination
 {
   display: inline-block;
   font-family: 'Open Sans Condensed', sans-serif;
   font-weight: 700;
 }
 
-.pager .pages span
+.pager .pagination span
 {
   display: inline-block;
   width: 1.5em;
@@ -385,7 +385,7 @@ ol.style1 li
   margin: 0 0.4em 0 0;
 }
 
-.pager .pages a
+.pager .pagination a
 {
   cursor: pointer;
   display: inline-block;
@@ -405,18 +405,32 @@ ol.style1 li
   box-shadow: inset 0 0.075em 0.25em 0 rgba(0,0,0,0.1);
 }
 
-.pager .pages a:hover
+.pager .pagination a:hover
 {
   background-color: #dadada;
 }
 
-.pager .pages a.active
+.pager .pagination em.current
 {
   background-color: #364050;
   background-image: url('images/bg1.png');
   color: #fff;
   box-shadow: none;
   text-shadow: -1px -1px 0px rgba(0,0,0,0.5);
+  display: inline-block;
+  text-align: center;
+  text-decoration: none;
+  margin: 0 0.4em 0 0;
+  border-radius: 0.4em;
+  -moz-transition: background-color .25s ease-in-out;
+  -webkit-transition: background-color .25s ease-in-out;
+  -o-transition: background-color .25s ease-in-out;
+  -ms-transition: background-color .25s ease-in-out;
+  transition: background-color .25s ease-in-out;
+  box-shadow: inset 0 0.075em 0.25em 0 rgba(0,0,0,0.1);
+  width: 2.75em;
+  height: 2.75em;
+  line-height: 2.75em;
 }
 
 /*********************************************************************************/
@@ -617,6 +631,7 @@ ol.style1 li
   background-image: url('images/bg1.png');
   color: #929da4;
   text-shadow: -1px -1px 0px rgba(0,0,0,0.5);
+  min-height: 100%;
 }
 
 #sidebar form input,
@@ -684,6 +699,11 @@ ol.style1 li
   height: 100%;
   background-image: url('images/bg2.png');
   opacity: 0.5;
+}
+
+body.left-sidebar .admin_content
+{
+  margin-left: 14em!important;
 }
 
 #content-inner

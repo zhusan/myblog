@@ -1,6 +1,7 @@
+<%= errors_for @blog %>
 <div>
   <h2>编辑文章</h2>
-  <%= form_tag admin_blog_path(@blog) do %>
+  <%= form_tag admin_blog_path(@blog) ,:method => "put" do %>
     <%= render partial: "form" %> 
     <%= submit_tag "保存" %>
   <% end %>

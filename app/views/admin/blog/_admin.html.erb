@@ -5,10 +5,10 @@
 <!-- Nav -->
 <nav id="nav" class="mobileUI-site-nav">
 <ul>
-  <li class="<%= params[:action] == 'new' ? 'current_page_item' : '' %>">
+  <li class="<%= ["new"].include?(params[:action]) ? 'current_page_item' : '' %>">
   <%= link_to "新建文章", new_admin_blog_path %>
   </li>
-  <li class="<%= params[:action] == 'index' ? 'current_page_item' : '' %>">
+  <li class="<%= !["new"].include?(params[:action]) ? 'current_page_item' : '' %>">
   <%= link_to "文章列表", admin_blog_index_path %>
   </li>
 </ul>
