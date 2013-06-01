@@ -1,0 +1,8 @@
+<% for name in [:info, :warning, :error, :notice] %>
+  <% if flash[name] %>
+    <div class="<%= [:warning, :error].include?(name) ? 'error' : 'notice' %>">
+      <p><%= flash[name] %></p>
+    </div>
+    <% flash[name] = nil %>
+  <% end %>
+<% end %>

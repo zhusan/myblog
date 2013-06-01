@@ -1,0 +1,29 @@
+
+<!-- go -->
+<div id="logo">
+  <h1 class="mobileUI-site-name"><%= link_to "我的博客", blog_index_path  %></h1>
+</div>
+
+<!-- Nav -->
+<nav id="nav" class="mobileUI-site-nav">
+<ul>
+  <li class="<%= ["index","show","create"].include?(params[:action]) ? 'current_page_item' : '' %>">
+  <%= link_to "文章", blog_index_path %>
+  </li>
+  <li><a href="#">关于我</a></li>
+</ul>
+</nav>
+
+<!-- Search -->
+<section class="is-search is-first">
+<form method="post" action="#">
+  <input type="text" class="text" name="search" placeholder="Search" />
+</form>
+</section>
+<!-- Copyright -->
+<div id="copyright">
+  <p><%= link_to "后台管理", admin_blog_index_path %></p>
+  <p>
+  &copy; 2013 An Untitled Site.
+  </p>
+</div>

@@ -18,6 +18,28 @@
   list-style-type:disc;
   margin-left:20px;
 }
+/* ========== notice/error ========== */
+#promote .notice, #promote .error{
+  margin-bottom:10px;
+  padding:3px 0;
+  text-align:center;
+}
+#promote .notice{
+  background-color:#ffffcc;
+}
+#promote .error{
+  background-color:#ff9999;
+  color:#fff;
+}
+#promote .list{
+  margin-bottom:20px;
+  background-color:#ffffcc;
+}
+#promote .list ul{
+  width:400px;
+  margin:0 auto;
+  padding:3px;
+}
 @import "admin/blog";
 @import "5grid/core";
 @import "5grid/core-desktop";
@@ -25,5 +47,6 @@
 @import "5grid/core-noscript";
 @import "style";
 @import "style-desktop";
-@import "style-1200px.css";
-@import "kindeditor/plugins/code/prettify"
+@import "style-1200px";
+@import "comment";
+@import "kindeditor/plugins/code/prettify";

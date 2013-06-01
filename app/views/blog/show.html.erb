@@ -1,16 +1,22 @@
 <div id="content-inner">
-    <!-- Post -->
-    <article class="is-post is-post-excerpt">
-    <header>
-    <h2><%= link_to @blog.title, blog_path(@blog) %></h2>
-    </header>
-    <div class="info">
-      <span class="date"><span class="month"><span><%= get_month_name @blog.created_at %></span></span> <span class="day"> <%=@blog.created_at.day %> </span></span>
-      <ul class="stats">
-        <li><a href="#" class="link-icon24 link-icon24-1">16</a></li>
-        <li><a href="#" class="link-icon24 link-icon24-2">32</a></li>
-      </ul>
-    </div>
-    <%= @blog.content.html_safe %>
-    </article>
- </div>
+  <!-- Post -->
+  <article class="is-post is-post-excerpt">
+  <header>
+  <h2><%= link_to @blog.title, blog_path(@blog) %></h2>
+  </header>
+  <div class="info">
+    <span class="date"><span class="month"><span><%= get_month_name @blog.created_at %></span></span> <span class="day"> <%=@blog.created_at.day %> </span></span>
+    <ul class="stats">
+      <li><a href="#respond" class="link-icon24 link-icon24-1"><%=@comments.size %></a></li>
+      <li><a href="#" class="link-icon24 link-icon24-2">32</a></li>
+    </ul>
+  </div>
+  <%= @blog.content.html_safe %>
+  </article>
+  <div id="comments">
+    <h2 id="comments-title">
+      《<span><%= @blog.title %></span>》上有 <%= @comments.size %> 条评论    </h2>
+    <%= render partial: "comment/list" %>
+    <%= render partial: "/comment/new" %>
+  </div>
+</div>

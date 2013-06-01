@@ -31,7 +31,7 @@ end
 
 module LibUnit
   # 完整的时间
-  def total_human_time(time)
+  def full_time(time)
     unless time.blank?
       time.strftime('%Y年%m月%d日 %H:%M:%S')
     else

@@ -11,16 +11,17 @@
     <!-- Wrapper -->
     <div id="wrapper">
       <!-- Content -->
+      <div id='promote'>
+        <%= render partial:  "/common/messages" %>
+      </div>
       <div id="content" class="mobileUI-main-content admin_content">
         <%= yield %>
       </div>
       <!-- Sidebar -->
       <div id="sidebar">
-        <%= render partial: "/admin/blog/admin" %>
+        <%= render partial: "/common/admin_sidebar" %>
       </div>
     </div>
-    <script type="text/javascript">
-      prettyPrint();
-    </script>
+    <script type="text/javascript">prettyPrint();</script>
   </body>
 </html>

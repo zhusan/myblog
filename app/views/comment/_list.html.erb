@@ -1,0 +1,23 @@
+<ol class="commentlist">
+  <% @comments.each do |c| %>
+    <li id="li-comment-5" class="comment even thread-even depth-1">
+    <article class="comment" id="comment-5">
+    <footer class="comment-meta">
+    <div class="comment-author vcard">
+      <img width="39" height="39" class="avatar avatar-39 photo" src="/assets/images/head.png" alt="">
+      <span class="fn"><a class="url" rel="external nofollow"><%=c.name%></a></span>
+      在 <a><time pubdate=""><%=full_time(c.created_at) %></time></a> <span class="says">说道：</span>
+    </div> 
+    <br>
+    </footer>
+    <div class="comment-content"><p><%=c.content %></p>
+    </div>
+    <% if session[:user] %>
+      <div class="reply">
+        <a href="#" class="comment-reply-link">回复 <span>↓</span></a>
+      </div>  
+    <% end %>
+    </article>
+    </li>
+  <% end %>
+</ol>

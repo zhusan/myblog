@@ -2,6 +2,9 @@ class Admin::BlogController < Admin::BaseController
 
   def index
     @blogs = Blog.paginate(:page => params[:page], :per_page => 15)
+    if params[:page].to_i > @blogs.total_pages.to_i
+      redirect_to admin_blog_index_path(:page => @blogs.total_pages)
+    end
   end
 
   def new
@@ -12,8 +15,9 @@ class Admin::BlogController < Admin::BaseController
     if @blog.valid? && @blog.save!
       flash[:notice] = "文件新建成功！"
       redirect_to  admin_blog_index_path
+    else
+      render new_admin_blog_path
     end
-    render new_admin_blog_path
   end
 
   def edit
@@ -42,6 +46,6 @@ class Admin::BlogController < Admin::BaseController
     else
       flash[:notice] = "没有该文章！"
     end
-    redirect_to admin_blog_index_path
+    redirect_to admin_blog_index_path(:page => params[:page])
   end
 end

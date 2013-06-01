@@ -1,0 +1,31 @@
+<div id="respond">
+  <h3 id="reply-title">发表评论 
+  </h3>
+  <% if @comment.errors.size > 0 %>
+    <script type="text/javascript">
+      if(location.href.indexOf("#respond") == -1)
+      location.href = location.href + "#respond";</script>
+  <% end %>
+  <%= errors_for @comment %>
+  <%= form_for @comment, :id => "commentform" do |c| %>
+    <%=c.hidden_field :blog_id %>
+    <p class="comment-notes">电子邮件地址不会被公开。 必填项已用 <span class="required">*</span> 标注</p>
+    <p class="comment-form-author">
+    <label for="author">姓名 <span class="required">*</span>
+    </label>
+    <%=c.text_field :name, :size => 30 %>
+    </p>
+    <p class="comment-form-email">
+    <label for="email">电子邮件 <span class="required">*</span>
+    </label>
+    <%=c.text_field :email, :size => 30 %>
+    </p>
+    <p class="comment-form-comment">
+    <label for="content">评论</label>
+    <%=c.text_area :content, :rows => 10 %>
+    </p>
+    <p class="form-submit">
+    <input type="submit" value="发表评论" id="submit" name="submit">
+    </p>
+  <% end %>
+</div>

@@ -1,9 +1,12 @@
-<h1> Login</h1>
-<%= form_tag "/user/login" do -%>
-  <label for="login">Login</label>
-  <%= text_field_tag :login, params[:login] %>
-  <label for="password">Password</label>
-  <%= password_field_tag :password, params[:password] %>
-
-  <%= submit_tag "Login"%>
-<% end %>
+<div>
+  <div>
+    <%= form_tag "/user/login" do -%>
+      <label for="login">Login</label>
+      <%= text_field_tag :login, params[:login] %>
+      <label for="password">Password</label>
+      <%= password_field_tag :password, params[:password] %>
+      <br /><br /><br />
+      <%= submit_tag "Login"%>
+    <% end %>
+  </div>
+</div>
