@@ -8,11 +8,14 @@ class Admin::BlogController < Admin::BaseController
   end
 
   def new
+    @blog = Blog.new
   end
 
   def create
-    @blog = Blog.new({:user_id => session[:user],:title => params[:title], :content => params[:content1.to_s]})
-    if @blog.valid? && @blog.save!
+    @blog = Blog.new(params[:blog])
+    if @blog.valid? 
+      @blog.user_id = session[:user]
+      @blog.save!
       flash[:notice] = "文件新建成功！"
       redirect_to  admin_blog_index_path
     else
@@ -26,11 +29,12 @@ class Admin::BlogController < Admin::BaseController
 
   def update
     @blog = Blog.find_by_id(params[:id])
-    @blog.attributes = {:title => params[:title], :content => params[:content1]}
+    @blog.attributes = params[:blog]
     if @blog.valid? && @blog.save!
+      flash[:notice] = "文件更新成功！"
       redirect_to admin_blog_path(@blog)
     else
-    render :action => :edit
+      render :action => :edit
     end
   end
 

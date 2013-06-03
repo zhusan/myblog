@@ -50,3 +50,8 @@
 @import "style-1200px";
 @import "comment";
 @import "kindeditor/plugins/code/prettify";
+pre.prettyprint
+{
+  font-size:100%;
+  overflow-x:auto;
+}

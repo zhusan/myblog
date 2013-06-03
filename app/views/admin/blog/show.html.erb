@@ -4,4 +4,4 @@
     发表于：<span><%= full_date(@blog.created_at) %></span>
   </div>
 </div>
-<%= raw @blog.content%>
+<%=@blog.content.html_safe %>

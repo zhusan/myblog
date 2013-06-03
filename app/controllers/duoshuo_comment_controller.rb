@@ -1,0 +1,2 @@
+class DuoshuoCommentController < ApplicationController
+end
