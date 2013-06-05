@@ -13,6 +13,8 @@ Striped 1.0
   -o-box-sizing: border-box;
   -ms-box-sizing: border-box;
   box-sizing: border-box;
+  word-break: break-all;
+  word-wrap:break-word;
 }
 
 body, input, textarea
@@ -31,6 +33,7 @@ body
 a
 {
   color: #1982D1;
+  text-decoration: none;
 }
 
 strong, b
@@ -666,7 +669,8 @@ ol.style1 li
 
 #sidebar a
 {
-  color: #d4dde0;
+  /* color: #d4dde0; */
+  color:#ffffff;
 }
 
 #sidebar h2,

@@ -20,6 +20,27 @@
   <input type="text" class="text" name="search" placeholder="Search" />
 </form>
 </section>
+<section>
+<h2 onclick="$(this).next().slideToggle()">标签</h2>
+<div id="myCanvasContainer">
+  <canvas width="180" height="180" id="myCanvas">
+  <p>Anything in here will be replaced on browsers that support the canvas element</p>
+  </canvas>
+</div>
+<div id="tags">
+  <%= get_all_tags %>
+  </div>
+</section>
+<% if @blogs_file %>
+  <section>
+  <h2 onclick="showToggle(this)">归档</h2>
+  <ul> 
+    <% @blogs_file.each do |k,v| %>
+      <li><%=link_to k +"("+v.size.to_s+")",blog_index_path(:time => k)%></li>
+    <% end %>
+  </ul>
+  </section>
+<% end %>
 <!--显示最新评论和来访人-->
 <%= render partial: "/duoshuo_comment/duoshuo_sidebar" %>
 <!-- Copyright -->

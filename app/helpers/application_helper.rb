@@ -27,4 +27,29 @@ module ApplicationHelper
     month_index = time.month rescue 0
     return I18n.t("date")[:month_names][month_index.to_i ] 
   end
+
+
+  def get_all_tags
+    tags = Blog.get_all_tags
+    items = tags.enum_for(:each).map do |t|
+      content_tag :li do
+        tag_name = t.tag.try(:name)
+        link_to tag_name+"("+t.count_tag.to_s+")",blog_index_path(:tag => t.tag_id) 
+      end
+    end 
+    content_tag :ul do
+      items.join("").html_safe
+    end
+  end
+
+  def get_blog_tags blog_id
+    blog = Blog.find_by_id(blog_id)
+    tags = blog.taggings
+    items = tags.enum_for(:each).map do |t|
+      link_to t.tag.try(:name),blog_index_path(:tag => t.tag_id)
+    end
+    content_tag :span, :class => "tag_span" do
+      items.join(",").html_safe
+    end
+  end
 end

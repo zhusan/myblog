@@ -8,7 +8,7 @@ Myblog::Application.routes.draw do
   # match "blog/:id" => "blog#show", :as => "blog"
   # match "blog" => "blog#index", :as => "blog"
   resources :blog, :only => [:show,:index]
-  resources :comment, :as => :comments
+  # resources :comment, :as => :comments
 # Sample of named route:
   #   match 'products/:id/purchase' => 'catalog#purchase', :as => :purchase
   # This route can be invoked with purchase_url(:id => product.id)
@@ -47,7 +47,7 @@ Myblog::Application.routes.draw do
       # Directs /admin/products/* to Admin::ProductsController
       # (app/controllers/admin/products_controller.rb)
       resources :blog
-      resources :comment 
+      # resources :comment 
     end
 
   # You can have the root of your site routed with "root"

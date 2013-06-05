@@ -3,9 +3,11 @@
   <%= render partial: "/blog/content", :locals => {:blog => @blog} %>
   <div id="comments">
     <!-- <h2 id="comments-title"> -->
-    <!--   《<span><%#= @blog.title %></span>》上有 <%#= @comments.size %> 条评论    </h2> -->
+      <!--   《<span><%#= @blog.title %></span>》上有 <%#= @comments.size %> 条评论    </h2> -->
     <!-- <%#= render partial: "comment/list" %> -->
     <!-- <%#= render partial: "/comment/new" %> -->
-    <%= render partial: "/duoshuo_comment/duoshuo_comments", :locals => {:blog => @blog,:show => true} %>
+    <div id="respond">
+      <%= render partial: "/duoshuo_comment/duoshuo_comments", :locals => {:blog => @blog,:show => true} %>
+    </div>
   </div>
 </div>

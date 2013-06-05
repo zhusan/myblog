@@ -30,21 +30,33 @@ end
 
 
 module LibUnit
+  def format_cn_time(str)
+    str.gsub(/[年,月]/,"-").gsub(/[日,秒]/,"").gsub(/[时,分]/,":")
+  end
+
   # 完整的时间
   def full_time(time)
     unless time.blank?
       time.strftime('%Y年%m月%d日 %H:%M:%S')
     else
-     "" 
+      "" 
+    end
+  end
+  # 完整的时间
+  def full_ym(time)
+    unless time.blank?
+      time.strftime('%Y年%m月')
+    else
+      "" 
     end
   end
 
- # 完整的日期
+  # 完整的日期
   def full_date(time)
     unless time.blank?
       time.strftime('%Y年%m月%d日')
     else
-     ""
+      ""
     end
   end
 end

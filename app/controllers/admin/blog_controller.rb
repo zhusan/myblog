@@ -1,7 +1,7 @@
 class Admin::BlogController < Admin::BaseController
 
   def index
-    @blogs = Blog.paginate(:page => params[:page], :per_page => 15)
+    @blogs = Blog.order("id desc").paginate(:page => params[:page], :per_page => 15)
     if params[:page].to_i > @blogs.total_pages.to_i
       redirect_to admin_blog_index_path(:page => @blogs.total_pages)
     end

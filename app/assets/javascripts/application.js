@@ -14,5 +14,34 @@
 //= require jquery_ujs
 // = require kindeditor
 //= require_tree .
+//
+function showToggle(obj){
+  $(obj).nextAll("ul").slideToggle("slow");
+}
+
+function auto_tag_list(tag_name)
+{
+  if ($('#blog_tag_list').val()== "" || $('#blog_tag_list').val() == null)
+  {$('#blog_tag_list').val(tag_name);}
+  else
+  {$('#blog_tag_list').val($('#blog_tag_list').val()+ ',' + tag_name);}
+}
+
+$(window).ajaxStart(function(){
+  alert(111);
+  var width, heigh;
+  if (window != window.top) {
+    width = (window.top.Shadowbox.content.width - 200) / 2;
+    height = (window.top.Shadowbox.content.height - 30) / 2 - 50;
+  }
+  else {
+    height = (window.screen.height - 30) / 2 - 150;
+    if (window.innerWidth) {
+      width = (window.innerWidth - 200) / 2;
+    }else{
+      width = (document.body.clientWidth - 200) / 2;
+    }
+
+  }});
 
 

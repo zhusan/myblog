@@ -25,6 +25,8 @@ gem 'will_paginate', '~> 3.0'# 分页
 gem 'therubyracer'
 
 gem "rails-i18n"
+gem "jwt"
+gem 'acts-as-taggable-on'
 # To use ActiveModel has_secure_password
 # gem 'bcrypt-ruby', '~> 3.0.0'
 

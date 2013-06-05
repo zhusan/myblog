@@ -1,14 +1,20 @@
 <div>
-  <div id="title_div">
-    <%= b.text_field :title,:class => "title_input" %> 
+  <div class="input_div">
+    标题： <%= b.text_field :title,:class => "title_input" %> 
+  </div>
+  <div class="input_div">
+    标签：<%= b.text_field :tag_list,:class => "title_input" %> 
+    <p><% Blog.get_most_use_tags.each do |w| %>
+      <a href="javascript:void(0);" onclick="auto_tag_list('<%= w %>')"><%= w %></a>
+    <% end %></p>
   </div>
   <div><%=b.kindeditor :content, 
     :editor_id => "my_editor",
     :cssPath => "/assets/kindeditor/plugins/code/prettify.css"
-    # :items => [
-    #   'code', 'fontsize',  'forecolor', 'hilitecolor', 'bold', 'italic', 'underline',
-    #   'removeformat', 'justifyleft', 'justifycenter', 'justifyright', 'insertorderedlist',
-    #   'insertunorderedlist', 'emoticons', 'image', 'link']
-  %>
+  # :items => [
+  #   'code', 'fontsize',  'forecolor', 'hilitecolor', 'bold', 'italic', 'underline',
+  #   'removeformat', 'justifyleft', 'justifycenter', 'justifyright', 'insertorderedlist',
+  #   'insertunorderedlist', 'emoticons', 'image', 'link']
+%>
 </div>
 </div>
