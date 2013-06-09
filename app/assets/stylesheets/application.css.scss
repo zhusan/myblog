@@ -1,45 +1,3 @@
-/* ========== errorExplanation ========== */
-.errorExplanation{
-  margin-bottom:20px;
-  background-color:#ffffff;
-  border:1px solid #ff5353;
-  padding-bottom:5px;
-}
-.errorExplanation h2{
-  color:#ffffff;
-  background-color:#ff5353;
-  padding:3px 5px;
-  font-size:14px;
-}
-.errorExplanation p{
-  margin-left:5px;
-}
-.errorExplanation ul li{
-  list-style-type:disc;
-  margin-left:20px;
-}
-/* ========== notice/error ========== */
-#promote .notice, #promote .error{
-  margin-bottom:10px;
-  padding:3px 0;
-  text-align:center;
-}
-#promote .notice{
-  background-color:#ffffcc;
-}
-#promote .error{
-  background-color:#ff9999;
-  color:#fff;
-}
-#promote .list{
-  margin-bottom:20px;
-  background-color:#ffffcc;
-}
-#promote .list ul{
-  width:400px;
-  margin:0 auto;
-  padding:3px;
-}
 @import "admin/blog";
 @import "5grid/core";
 @import "5grid/core-desktop";
@@ -48,14 +6,7 @@
 @import "style";
 @import "style-desktop";
 @import "style-1200px";
-@import "comment";
+// @import "comment";
+@import "common";
 @import "kindeditor/plugins/code/prettify";
-pre.prettyprint
-{
-  font-size:100%;
-  overflow-x:auto;
-}
-span.tag_span a:hover
-{
-  background-color: #ccccff;
-}
+ 

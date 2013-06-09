@@ -12,16 +12,16 @@
     <script type="text/javascript">
       $(document).ready(function() {
           if(!$('#myCanvas').tagcanvas({
-textColour: null,
-outlineColour:'#ff00ff',
-reverse: true,
-initial: [0.2,0.2],
-depth:0.8,
-maxpeed: 0.05
-},'tags')) {
+            textColour: null,
+            outlineColour:'#ff00ff',
+            reverse: true,
+            initial: [0.2,0.2],
+            depth:0.8,
+            maxpeed: 0.05
+          },'tags')) {
           $('#myCanvasContainer').hide();
           }
-          });
+      });
 </script>
       </head>
       <body class="left-sidebar is-desktop is-1000px">
@@ -41,15 +41,16 @@ maxpeed: 0.05
         </div>
         <script type="text/javascript">
           prettyPrint();//print code
-          var duoshuoQuery = {short_name:"zhusan"};
-(function() {
- var ds = document.createElement('script');
- ds.type = 'text/javascript';ds.async = true;
- ds.src = 'http://static.duoshuo.com/embed.js';
- ds.charset = 'UTF-8';
- (document.getElementsByTagName('head')[0] 
-  || document.getElementsByTagName('body')[0]).appendChild(ds);
- })();
+          <!-- 多说评论 -->
+          var duoshuoQuery = {short_name: "<%=Setting.duoshuo.short_name %>"};
+          (function() {
+            var ds = document.createElement('script');
+            ds.type = 'text/javascript';ds.async = true;
+            ds.src = 'http://static.duoshuo.com/embed.js';
+            ds.charset = 'UTF-8';
+            (document.getElementsByTagName('head')[0] 
+            || document.getElementsByTagName('body')[0]).appendChild(ds);
+          })();
 </script>
   </body>
 </html>
