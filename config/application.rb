@@ -67,8 +67,8 @@ ActionMailer::Base.delivery_method = :smtp
 ActionMailer::Base.smtp_settings = {
   :address => "smtp.163.com",
   :port => 25,
-  :user_name => "zhusan333@163.com",
-  :password => "13970297593"
+  :user_name => "",
+  :password => ""
 }
 
 Myblog::Application.config.middleware.use(ExceptionNotifier,
