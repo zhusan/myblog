@@ -10,9 +10,10 @@ class BlogController < ApplicationController
     unless @blog
       flash[:notice] = "没有该文章!"
       redirect_to :action => :index
+    else
+      @comments = @blog.comments
+      @comment = Comment.new(:blog_id => @blog.id)
     end
-    @comments = @blog.comments
-    @comment = Comment.new(:blog_id => @blog.id)
   end
 
 end

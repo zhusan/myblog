@@ -67,3 +67,7 @@ gem 'rails_kindeditor', '~> 0.3.18'
 gem 'mini_magick'
 # gem 'locale'  
 # gem 'locale_rails' 
+#
+# 程序异常邮
+gem 'exception_notification', github: 'smartinez87/exception_notification'
+

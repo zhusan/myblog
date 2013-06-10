@@ -4,9 +4,9 @@ require 'rails/all'
 
 if defined?(Bundler)
   # If you precompile assets before deploying to production, use this line
-  Bundler.require(*Rails.groups(:assets => %w(development test)))
+  # Bundler.require(*Rails.groups(:assets => %w(production development test)))
   # If you want your assets lazily compiled in production, use this line
-  # Bundler.require(:default, :assets, Rails.env)
+  Bundler.require(:default, :assets, Rails.env)
 end
 
 module Myblog
@@ -32,7 +32,7 @@ module Myblog
     # The default locale is :en and all translations from config/locales/*.rb,yml are auto loaded.
     # config.i18n.load_path += Dir[Rails.root.join('my', 'locales', '*.{rb,yml}').to_s]
     config.i18n.default_locale = "zh-CN"
-    
+
     # Configure the default encoding used in templates for Ruby 1.9.
     config.encoding = "utf-8"
 
@@ -63,3 +63,15 @@ end
 require "pp"
 require "lib_unit"
 include LibUnit
+ActionMailer::Base.delivery_method = :smtp
+ActionMailer::Base.smtp_settings = {
+  :address => "smtp.163.com",
+  :port => 25,
+  :user_name => "zhusan333@163.com",
+  :password => "13970297593"
+}
+
+Myblog::Application.config.middleware.use(ExceptionNotifier,
+                                            :email_prefix => "[Myblog] ",
+                                            :sender_address => "zhusan333@163.com",
+                                            :exception_recipients => %w{690015301@qq.com})
