@@ -7,9 +7,6 @@ defaults: &defaults
     backup_backet: "myblog"
     image_backet: "zhusan"
     image_site: "http://zhusan.qiniudn.com/"
-  mail:
-    user_name: "zhusan333@163.com"
-    password: "13970297593"
 
 development:
   <<: *defaults
