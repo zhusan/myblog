@@ -8,6 +8,6 @@ class CreateUsers < ActiveRecord::Migration
 
       t.timestamps
     end
-    User.create(:login => "zhusan", :password => "3199333", :name => "zhusan")
+    User.create(:login => "admin", :password => "123456", :name => "zhusan")
   end
 end
