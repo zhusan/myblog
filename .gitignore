@@ -16,3 +16,5 @@ tmp/
 *.swp
 *.swo
 tags
+public/backup
+backup/
