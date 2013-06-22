@@ -10,21 +10,29 @@
   <li class="<%= ["index","show","create"].include?(params[:action]) ? 'current_page_item' : '' %>">
   <%= link_to "文章", blog_index_path %>
   </li>
-  <li><a href="#">关于我</a></li>
+  <li class="<%= ["about"].include?(params[:action]) ? 'current_page_item' : '' %>"><%= link_to "关于我", about_path %></li>
 </ul>
 </nav>
 
 <!-- Search -->
 <section class="is-search is-first">
-<form method="post" action="#">
-  <input type="text" class="text" name="search" placeholder="Search" />
+
+<!--Baidu站内搜索开始-->
+<form method="get" target="_blank" action="http://www.google.com/search">
+  <input type=text name=q>
+  <!-- <input type=submit name=btnG value="Google 搜索"> -->
+  <input type=hidden name=ie value=GB2312>
+  <input type=hidden name=oe value=GB2312>
+  <input type=hidden name=hl value=zh-CN>
+  <input type=hidden name=domains value="zhusan.net">
+  <input type=hidden name=sitesearch value="zhusan.net">
 </form>
 </section>
 <section>
 <h2 onclick="$(this).next().slideToggle()">标签</h2>
 <div id="myCanvasContainer">
   <canvas width="180" height="180" id="myCanvas">
-  <p>Anything in here will be replaced on browsers that support the canvas element</p>
+  <p>Anything in here will be replaced on browsers that support the canvas element,请使用支持html5标签的浏览器</p>
   </canvas>
 </div>
 <div id="tags" style="display:none">
@@ -54,11 +62,16 @@
   </section>
 <% end %>
 <!--显示最新评论和来访人-->
-<%= render partial: "/duoshuo_comment/duoshuo_sidebar" %>
+<%#= render partial: "/duoshuo_comment/duoshuo_sidebar" %>
 <!-- Copyright -->
 <div id="copyright">
   <p><%= link_to "后台管理", admin_blog_index_path %></p>
   <p>
-  &copy; 2013 An Untitled Site.
+  Powered by <a href="https://github.com/zhusan/myblog" target="_blank">zhusan</a> 
+
+  <script type="text/javascript">
+    var _bdhmProtocol = (("https:" == document.location.protocol) ? " https://" : " http://");
+    document.write(unescape("%3Cscript src='" + _bdhmProtocol + "hm.baidu.com/h.js%3Fa15de254444939c8e5c5f08b275ccf0c' type='text/javascript'%3E%3C/script%3E"));
+  </script>
   </p>
 </div>

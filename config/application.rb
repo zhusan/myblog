@@ -4,9 +4,9 @@ require 'rails/all'
 
 if defined?(Bundler)
   # If you precompile assets before deploying to production, use this line
-  # Bundler.require(*Rails.groups(:assets => %w(production development test)))
+  Bundler.require(*Rails.groups(:assets => %w(production development test)))
   # If you want your assets lazily compiled in production, use this line
-  Bundler.require(:default, :assets, Rails.env)
+  # Bundler.require(:default, :assets, Rails.env)
 end
 
 module Myblog
@@ -63,15 +63,16 @@ end
 require "pp"
 require "lib_unit"
 include LibUnit
+ActionMailer::Base.smtp_settings[:enable_starttls_auto] = false
 ActionMailer::Base.delivery_method = :smtp
 ActionMailer::Base.smtp_settings = {
-  :address => "smtp.163.com",
+  :address => "us2.smtp.mailhostbox.com",
   :port => 25,
-  :user_name => "",
-  :password => ""
+  :user_name => "admin@zhusan.net",
+  :password => "zs3199333"
 }
 
 Myblog::Application.config.middleware.use(ExceptionNotifier,
                                             :email_prefix => "[Myblog] ",
-                                            :sender_address => "zhusan333@163.com",
+                                            :sender_address => "admin@zhusan.net",
                                             :exception_recipients => %w{690015301@qq.com})

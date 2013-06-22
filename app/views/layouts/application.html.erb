@@ -1,9 +1,11 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>Myblog</title>
+    <title>老三的blog</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
     <meta name="description" content="老三的blog">
-    <meta name="keywords" content="老三,博客,ruby,rails,编程">
+    <meta name="keywords" content="朱三,zhusan,老三,博客,ruby,rails,编程">
+    <meta name="baidu-site-verification" content="FMW4mZAnDp" />
     <%= stylesheet_link_tag    "application", :media => "all" %>
     <%= javascript_include_tag "application" %>
     <%= javascript_include_tag "jquery.tagcanvas" %>
@@ -27,7 +29,7 @@
     </div>
     <script type="text/javascript">
       prettyPrint();//print code
-      <!-- 多说评论 -->
+          <!-- 多说评论 -->
       var duoshuoQuery = {short_name: "<%=Setting.duoshuo.short_name %>"};
       (function() {
         var ds = document.createElement('script');
@@ -38,5 +40,13 @@
         || document.getElementsByTagName('body')[0]).appendChild(ds);
       })();
     </script>
+    <!-- Baidu Button BEGIN -->
+    <script type="text/javascript" id="bdshare_js" data="type=slide&amp;img=0&amp;pos=right&amp;uid=1110182" ></script>
+    <script type="text/javascript" id="bdshell_js"></script>
+    <script type="text/javascript">
+      var bds_config={"bdTop":115};
+      document.getElementById("bdshell_js").src = "http://bdimg.share.baidu.com/static/js/shell_v2.js?cdnversion=" + Math.ceil(new Date()/3600000);
+    </script>
+    <!-- Baidu Button END -->>>
   </body>
 </html>

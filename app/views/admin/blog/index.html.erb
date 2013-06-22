@@ -1,9 +1,10 @@
 <%= will_paginate @blogs %>
 <table>
   <tr><td>标题</td><td>作者</td><td>日期</td><td>操作</td></tr>
+  <% if @blogs.present? %>
   <% @blogs.each do |blog| %>
     <tr>
-      <td><%= link_to blog.title,admin_blog_path(blog)  %></td>
+      <td><%= link_to blog.title,blog_path(blog)  %></td>
       <td><%=blog.user.try(:name)  %></td>
       <td><%= full_date(blog.created_at) %></td>
       <td>
@@ -12,5 +13,8 @@
       </td>
     </tr>
   <% end %>
+<% else %>
+  <tr><td colspan="4">无文章！</td></tr>
+<% end %>
 </table>
 <%= will_paginate @blogs %>

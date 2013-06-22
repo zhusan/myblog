@@ -7,9 +7,10 @@ Myblog::Application.routes.draw do
   # Keep in mind you can assign values other than :controller and :action
   # match "blog/:id" => "blog#show", :as => "blog"
   # match "blog" => "blog#index", :as => "blog"
+  get "about/" => "user#about", :as => :about
   resources :blog, :only => [:show,:index]
   # resources :comment, :as => :comments
-# Sample of named route:
+  # Sample of named route:
   #   match 'products/:id/purchase' => 'catalog#purchase', :as => :purchase
   # This route can be invoked with purchase_url(:id => product.id)
 
@@ -41,14 +42,17 @@ Myblog::Application.routes.draw do
   #       get 'recent', :on => :collection
   #     end
   #   end
-  
+  match "user/login" => "user#login", via: [:get, :post]
+  get "user/logout" => "user#logout"
+
   # Sample resource route within a namespace:
-    namespace :admin do
-      # Directs /admin/products/* to Admin::ProductsController
-      # (app/controllers/admin/products_controller.rb)
-      resources :blog
-      # resources :comment 
-    end
+  namespace :admin do
+    # Directs /admin/products/* to Admin::ProductsController
+    # (app/controllers/admin/products_controller.rb)
+    get "blog/backup" => "blog#backup"
+    resources :blog,:except => [:show]
+    # resources :comment 
+  end
 
   # You can have the root of your site routed with "root"
   # just remember to delete public/index.html.
@@ -59,5 +63,5 @@ Myblog::Application.routes.draw do
 
   # This is a legacy wild controller route that's not recommended for RESTful applications.
   # Note: This route will make all actions in every controller accessible via GET requests.
-  match   ':controller(/:action(/:id))(.:format)', via: [:get,:post,:put,:delete]
+  # match   ':controller(/:action(/:id))(.:format)', via: [:get,:post,:put,:delete]
 end

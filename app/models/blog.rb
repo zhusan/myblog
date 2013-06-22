@@ -20,7 +20,6 @@ class Blog < ActiveRecord::Base
         image_name = src.split("/").last
         new_src = Setting.qiniu.image_site + image_name
         path = "public/" + src
-        pp path
         QiniuUpload.upload_sql_file(path,Setting.qiniu.image_backet,image_name)
         self.content = self.content.sub(src,new_src)
       end
@@ -48,9 +47,12 @@ class Blog < ActiveRecord::Base
     #归档
     if options[:time].present?
       real_time = format_cn_time(options[:time])
-      conn[0] << "blogs.created_at > ? and blogs.created_at < ?"
-      conn << (real_time + "01").to_date.beginning_of_month
-      conn << (real_time + "01").to_date.end_of_month
+      real_time = (real_time + "01").to_date rescue nil
+      if real_time
+        conn[0] << "blogs.created_at > ? and blogs.created_at < ?"
+        conn << real_time.beginning_of_month
+        conn << real_time.to_date.end_of_month
+      end
     end
     #标签
     if options[:tag].present?

@@ -49,7 +49,7 @@ module ApplicationHelper
       link_to t.tag.try(:name),blog_index_path(:tag => t.tag_id)
     end
     content_tag :span, :class => "tag_span" do
-      items.join(",").html_safe
+      items.join(" ").html_safe
     end
   end
 end

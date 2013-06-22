@@ -13,10 +13,10 @@ class Admin::BlogController < Admin::BaseController
 
   def create
     @blog = Blog.new(params[:blog])
-    if @blog.valid? 
+    if @blog.valid?
       @blog.user_id = session[:user]
       @blog.save!
-      flash[:notice] = "文件新建成功！"
+      flash[:notice] = "文章新建成功！"
       redirect_to  admin_blog_index_path
     else
       render new_admin_blog_path
@@ -31,16 +31,16 @@ class Admin::BlogController < Admin::BaseController
     @blog = Blog.find_by_id(params[:id])
     @blog.attributes = params[:blog]
     if @blog.valid? && @blog.save!
-      flash[:notice] = "文件更新成功！"
-      redirect_to admin_blog_path(@blog)
+      flash[:notice] = "文章更新成功！"
+      redirect_to blog_path(@blog)
     else
       render :action => :edit
     end
   end
 
-  def show
-    @blog = Blog.find_by_id(params[:id])
-  end
+  # def show
+  #   @blog = Blog.find_by_id(params[:id])
+  # end
 
   def destroy
     blog = Blog.find_by_id(params[:id])
@@ -52,4 +52,5 @@ class Admin::BlogController < Admin::BaseController
     end
     redirect_to admin_blog_index_path(:page => params[:page])
   end
+
 end

@@ -13,6 +13,10 @@ class UserController < ApplicationController
     end
   end
 
+  def about
+
+  end
+
   def logout
     session[:user] = nil
     cookies[:duoshuo_token] = nil 

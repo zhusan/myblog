@@ -32,7 +32,7 @@ class User < ActiveRecord::Base
       file_path = "backup/" + file_name
       %x{mysqldump -u#{user} -p#{password} #{database} > #{file_path}}
       Qiniu::RS.delete(Setting.qiniu.backup_backet,file_name)
-      QiniuUpload.upload_sql_file(file_path,Setting.qiniu.image_backet,file_name)
+      QiniuUpload.upload_sql_file(file_path,Setting.qiniu.backup_backet,file_name)
       # ftp_upload file_name
       %x{rm #{file_path}}
     end

@@ -1,8 +1,17 @@
 <div id="content-inner">
-  <% @blogs.each do |blog| %>
-    <!-- Post -->
-    <%= render partial: "/blog/content", :locals => {:blog => blog} %>
-    <%= render partial: "/duoshuo_comment/duoshuo_comments", :locals => {:blog => blog,:show =>false} %>
+  <!-- Pager -->
+  <div class="pager">
+    <%= will_paginate @blogs %>
+  </div>
+
+  <% if @blogs.present? %>
+    <% @blogs.each do |blog| %>
+      <!-- Post -->
+      <%= render partial: "/blog/content", :locals => {:blog => blog} %>
+      <%= render partial: "/duoshuo_comment/duoshuo_comments", :locals => {:blog => blog,:show =>false} %>
+    <% end %>
+  <% else %>
+    <div> 无文章！</div>
   <% end %>
   <!-- Pager -->
   <div class="pager">
