@@ -1,4 +1,6 @@
 module ApplicationHelper
+  include ActsAsTaggableOn
+
   def errors_for(object, message=nil)  
     html = "" 
     object_name = object.class.name.humanize.downcase
@@ -51,5 +53,23 @@ module ApplicationHelper
     content_tag :span, :class => "tag_span" do
       items.join(" ").html_safe
     end
+  end
+
+  def get_title
+    default_title = "老三的blog"
+    other_title = ""
+    if params[:controller] == "blog"
+      if params[:id] && @blog
+        other_title = "-" + @blog.title
+      elsif params[:tag]
+        tag = Tag.find_by_id(params[:tag])
+        other_title = "-" + tag.name if tag
+      elsif params[:time]
+        other_title = "-" + params[:time]
+      end
+    elsif params[:action] == "about"
+      return "朱三" 
+    end
+    default_title + other_title
   end
 end

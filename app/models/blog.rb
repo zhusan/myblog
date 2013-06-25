@@ -41,11 +41,18 @@ class Blog < ActiveRecord::Base
     end
   end
 
+  def self.get_datas(options)
+    conn,tables = get_conn(options)
+    blogs = Blog.where(conn).includes(tables).order("blogs.id desc").paginate(:page =>options[:page].to_i, :per_page => 5)
+    blogs_file = Blog.select("created_at").order("created_at desc").group_by{|c| full_ym(c.created_at)}
+    return blogs,blogs_file 
+  end
+
   def self.get_conn(options)
     conn = [["1=1"]]
     tables = []
     #归档
-    if options[:time].present?
+    if options[:time]
       real_time = format_cn_time(options[:time])
       real_time = (real_time + "01").to_date rescue nil
       if real_time

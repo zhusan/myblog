@@ -31,7 +31,7 @@ end
 
 module LibUnit
   def format_cn_time(str)
-    str.gsub(/[年,月]/,"-").gsub(/[日,秒]/,"").gsub(/[时,分]/,":")
+    str.gsub(/[年,月]/,"-").gsub(/[日,秒]/,"").gsub(/[时,分]/,":") rescue nil
   end
 
   # 完整的时间
