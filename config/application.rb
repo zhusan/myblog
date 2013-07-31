@@ -69,7 +69,7 @@ ActionMailer::Base.smtp_settings = {
   :address => "us2.smtp.mailhostbox.com",
   :port => 25,
   :user_name => "admin@zhusan.net",
-  :password => "zs3199333"
+  :password => ""
 }
 
 Myblog::Application.config.middleware.use(ExceptionNotifier,
